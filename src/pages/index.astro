@@ -2,9 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import "../../public/memoji4.png";
 import Footer from "../components/Footer.astro"
+import MyProjects from "../components/MyProjects.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Brayant F - Product Designer">
 	<div class="lg:w-11/12 h-screen flex justify-center items-center flex-col">
 		<!-- imagen -->
 		<div
@@ -36,16 +37,17 @@ import Footer from "../components/Footer.astro"
 			<a
 				href="https://www.instagram.com/brayan_tsj/"
 				target="_blank"
-				class="py-2 px-5 rounded-xl bg-cyan-600 hover:bg-cyan-500"
-				>Contactar</a
+				class="py-2 px-5 rounded-xl text-orange-500 font-bold transition duration-700 hover:bg-orange-500 hover:text-white"
+				>@Brayan_tsj</a
 			>
 			<a
 				href="https://www.instagram.com/brayan_tsj/"
 				target="_blank"
-				class="py-2 px-5 rounded-xl bg-orange-500 hover:bg-orange-400"
-				>@Brayan_tsj</a
+				class="py-2 px-5 rounded-xl border border-b-orange-500 border-r-orange-500 hover:bg-orange-500 hover:border-orange-500 transition duration-700"
+				>Contactar</a
 			>
+			
 		</div>
 	</div>
-	<Footer />
+	<MyProjects />
 </Layout>

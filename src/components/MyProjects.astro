@@ -1,0 +1,20 @@
+---
+import "../../public/screen_yullhome.webp"
+import "../../public/503shots_so.webp"
+import "../../public/124shots_so.webp"
+import CardProject from "./CardProject.astro"
+---
+
+<section class="border-t-2 border-gray-700 p-4 xl:p-0">
+    <div class="mt-4">
+        <h2 class="text-3xl">Proyectos</h2>
+    </div>
+    <div class="py-7 grid md:grid-cols-2 gap-4">
+        <CardProject title="YullHome" href="https://yullhome.com/" img="503shots_so.webp"> 
+            E-commerce de muebles para interiores con servicio integrado de diseño de interiorismo, combinando estilo y personalización
+        </CardProject>
+        <CardProject title="Serena" href="https://serena.com.mx/" img="124shots_so.webp"> 
+            Diseño web moderno para una residencial, destacando elegancia y funcionalidad.
+        </CardProject>
+    </div>
+</section>
