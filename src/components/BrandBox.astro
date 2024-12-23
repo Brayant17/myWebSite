@@ -1,0 +1,16 @@
+---
+// este componente solo sirve para mostrar los icons de las tecnologias
+interface Props {
+    focus: boolean
+}
+
+const { focus } = Astro.props
+
+const style = focus 
+    ? 'bg-gradient-to-br from-orange-500 to-fuchsia-600 -translate-x-2 -translate-y-2' 
+    : 'bg-gray-800 hover:bg-gradient-to-br from-orange-500 to-fuchsia-600 hover:-translate-x-2 hover:-translate-y-2'
+---
+
+<div class=`rounded-md flex justify-center items-center scale-110 transition ease-in-out duration-700 ${style} min-h-14`>
+    <slot class="scale-150" />
+</div>
