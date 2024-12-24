@@ -1,0 +1,79 @@
+---
+// No pongas código relacionado con el DOM aquí
+---
+<div class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-2 md:mt-28 p-4">
+    <div class="p-4 pl-0">
+        <h4 class="text-3xl mb-4 mt-2">¿Tienes alguna pregunta o proyecto en mente?</h4>
+        <p class="text-lg">
+            Estoy aquí para ayudarte. Si deseas obtener una cotización
+            personalizada o necesitas más información sobre cómo puedo ayudarte
+            a llevar tu idea a la web, no dudes en enviarme un mensaje. Estaré
+            encantado de trabajar contigo y ayudarte a lograr tus objetivos.
+            ¡Envíame tus detalles y estaré en contacto contigo lo antes posible!
+        </p>
+    </div>
+    <div class="p-4 bg-slate-800 rounded-md">
+        <form
+            id="my-form"
+            action="https://formspree.io/f/mzzzzzpz"
+            method="POST"
+            class="flex flex-col justify-around md:justify-between h-full"
+        >
+            <p id="my-form-status"></p>
+            <label> Tu correo: </label>
+            <input
+                type="email"
+                name="email"
+                class="bg-gray-900 p-2 md:my-2 rounded-md"
+            />
+            <label> Tu mensaje: </label>
+            <textarea name="message" class="bg-gray-900 p-2 md:my-2 rounded-md"
+            ></textarea>
+            <button
+                id="my-form-button"
+                class="mt-3 py-3 rounded-md border border-b-orange-500 border-r-orange-500 hover:bg-orange-500 hover:border-orange-500 transition duration-700 font-bold"
+                >Enviar</button
+            >
+        </form>
+    </div>
+</div>
+
+<script type="module">
+    var form = document.getElementById("my-form");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const status = document.getElementById("my-form-status");
+        const data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: "POST",
+            body: data,
+            headers: {
+                Accept: "application/json",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    status.innerHTML = "Thanks for your submission!";
+                    form.onreset;
+                } else {
+                    response.json().then((data) => {
+                        if (Object.hasOwn(data, "errors")) {
+                            status.innerHTML = data["errors"]
+                                .map((error) => error["message"])
+                                .join(", ");
+                        } else {
+                            status.innerHTML =
+                                "Oops! There was a problem submitting your form";
+                        }
+                    });
+                }
+            })
+            .catch((error) => {
+                status.innerHTML =
+                    "Oops! There was a problem submitting your form";
+            });
+    }
+
+    form.addEventListener("submit", handleSubmit);
+</script>
