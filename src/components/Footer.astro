@@ -1,17 +1,19 @@
----
-import Icontrade from "./Icontrade.astro";
----
-
-<footer class="bg-gray-800 absolute w-full left-0 rounded-t-3xlfg">
-    <div class="flex flex-col items-center">
-        <!-- icon trade -->
-        <div class="rounded bg">
-            <Icontrade />
+<footer class="bg-gray-800 rounded-t-md p-4">
+    <div class="w-full flex flex-col items-center mb-3">
+        <div class="w-20 my-4 flex justify-center items-center rounded-full bg-cyan-50">
+            <img class="bg-center overflow-hidden" src="memoji4.png" alt="" />
         </div>
-
-        <h3></h3>
-        <div>
-            <button></button>
+        <div class="flex">
+            <a href="" class="mx-3">Home</a>
+            <a href="#sobre_mi" class="mx-3">Sobre mí</a>
+            <a href="#proyectos" class="mx-3">Proyectos</a>
+            <a href="#contacto" class="mx-3">Contacto</a>
         </div>
+        
     </div>
+    <div class="border-t-2 flex justify-between py-3">
+        <a href="/aviso_privacidad">Aviso de Privacidad</a>
+        <a href="/terminos_condiciones">Terminos y Condiciones</a>
+    </div>
+    
 </footer>

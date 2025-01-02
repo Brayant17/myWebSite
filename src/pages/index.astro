@@ -52,6 +52,7 @@ import ContactMe from "../components/ContactMe.astro";
 		</div>
 	</div>
 	<AboutMe />
-	<MyProjects />
-	<ContactMe>
+	<MyProjects client:visible />
+	<ContactMe client:visible />
+	<Footer />
 </Layout>
